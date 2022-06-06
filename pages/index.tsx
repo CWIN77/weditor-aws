@@ -12,7 +12,7 @@ const Container = styled.div`
 const Home: NextPage = () => {
   return (
     <Container>
-      <div>MyApp</div>
+      <div>YYYYYYYYY!!</div>
       <SVG_people width={36} height={36} />
     </Container>
   )
