@@ -33,50 +33,42 @@ function Navbar() {
       <Nav>
         <Link href={"/"}>
           <NavBtn onClick={()=>{setPage("/")}}  page={`${page==="/"}`}>
-            <>
-              {
-                page === '/'
-                ? <Svg_video_bold {...iconStyle} />
-                : <Svg_video {...iconStyle} />
-              }
-              <h2>편집각</h2>
-            </>
+            {
+              page === '/'
+              ? <Svg_video_bold {...iconStyle} />
+              : <Svg_video {...iconStyle} />
+            }
+            <h2>편집각</h2>
           </NavBtn>
         </Link>
         <Link href={"/save"}>
           <NavBtn onClick={()=>{setPage("/save")}} page={`${page==="/save"}`}>
-            <>
-              {
-                page === '/save'
-                ? <Svg_box_bold {...iconStyle} />
-                : <Svg_box {...iconStyle} />
-              }
-              <h2>찜목록</h2>
-            </>
+            {
+              page === '/save'
+              ? <Svg_box_bold {...iconStyle} />
+              : <Svg_box {...iconStyle} />
+            }
+            <h2>찜목록</h2>
           </NavBtn>
         </Link>
         <Link href={"/result"}>
           <NavBtn onClick={()=>{setPage("/result")}} page={`${page==="/result"}`}>
-            <>
-              {
-                page === '/result'
-                ? <Svg_medal_bold {...iconStyle} />
-                : <Svg_medal {...iconStyle} />
-              }
-              <h2>내성과</h2>
-            </>
+            {
+              page === '/result'
+              ? <Svg_medal_bold {...iconStyle} />
+              : <Svg_medal {...iconStyle} />
+            }
+            <h2>내성과</h2>
           </NavBtn>
         </Link>
         <Link href={"/thumbnail"}>
           <NavBtn onClick={()=>{setPage("/thumbnail")}} page={`${page==="/thumbnail"}`}>
-            <>
-              {
-                page === '/thumbnail'
-                ? <Svg_thumbnail_bold {...iconStyle} />
-                : <Svg_thumbnail {...iconStyle} />
-              }
-              <h2>썸네일</h2>
-            </>
+            {
+              page === '/thumbnail'
+              ? <Svg_thumbnail_bold {...iconStyle} />
+              : <Svg_thumbnail {...iconStyle} />
+            }
+            <h2>썸네일</h2>
           </NavBtn>
         </Link>
       </Nav>
@@ -85,50 +77,42 @@ function Navbar() {
         <NavOver>
           <Link href={"/"}>
             <NavBtn onClick={()=>{setPage("/")}}  page={`${page==="/"}`}>
-              <>
-                {
-                  page === '/'
-                  ? <Svg_video_bold {...iconStyle} />
-                  : <Svg_video {...iconStyle} />
-                }
-                <h2>편집각</h2>
-              </>
+              {
+                page === '/'
+                ? <Svg_video_bold {...iconStyle} />
+                : <Svg_video {...iconStyle} />
+              }
+              <h2>편집각</h2>
             </NavBtn>
           </Link>
           <Link href={"/save"}>
             <NavBtn onClick={()=>{setPage("/save")}} page={`${page==="/save"}`}>
-              <>
-                {
-                  page === '/save'
-                  ? <Svg_box_bold {...iconStyle} />
-                  : <Svg_box {...iconStyle} />
-                }
-                <h2>찜목록</h2>
-              </>
+              {
+                page === '/save'
+                ? <Svg_box_bold {...iconStyle} />
+                : <Svg_box {...iconStyle} />
+              }
+              <h2>찜목록</h2>
             </NavBtn>
           </Link>
           <Link href={"/result"}>
             <NavBtn onClick={()=>{setPage("/result")}} page={`${page==="/result"}`}>
-              <>
-                {
-                  page === '/result'
-                  ? <Svg_medal_bold {...iconStyle} />
-                  : <Svg_medal {...iconStyle} />
-                }
-                <h2>내성과</h2>
-              </>
+              {
+                page === '/result'
+                ? <Svg_medal_bold {...iconStyle} />
+                : <Svg_medal {...iconStyle} />
+              }
+              <h2>내성과</h2>
             </NavBtn>
           </Link>
           <Link href={"/thumbnail"}>
             <NavBtn onClick={()=>{setPage("/thumbnail")}} page={`${page==="/thumbnail"}`}>
-              <>
-                {
-                  page === '/thumbnail'
-                  ? <Svg_thumbnail_bold {...iconStyle} />
-                  : <Svg_thumbnail {...iconStyle} />
-                }
-                <h2>썸네일</h2>
-              </>
+              {
+                page === '/thumbnail'
+                ? <Svg_thumbnail_bold {...iconStyle} />
+                : <Svg_thumbnail {...iconStyle} />
+              }
+              <h2>썸네일</h2>
             </NavBtn>
           </Link>
         </NavOver>
@@ -177,6 +161,7 @@ const NavOver = styled.div`
   top:0px;
 `
 const NavBtn = styled.div<{page:string}>`
+  cursor: pointer;
   padding: 6px;
   padding-left: 4px;
   padding-right: 4px;

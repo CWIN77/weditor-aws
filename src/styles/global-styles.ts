@@ -15,6 +15,14 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: #1d2127;
   }
+  body::-webkit-scrollbar{
+    width:8px;
+    background-color: initial;
+  }
+  body::-webkit-scrollbar-thumb{
+    width:8px;
+    background-color: #373d4a;
+  }
   * {
     /* font-family: "Noto Sans KR", sans-serif; */
     background-color: initial;
