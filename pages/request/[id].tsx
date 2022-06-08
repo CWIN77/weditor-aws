@@ -21,7 +21,7 @@ function Detail() {
   const navIconStyle = {width:20,height:20}
   const router = useRouter();
   const {id} = router.query;
-  const request:IListRequest|null = JSON.parse(sessionStorage.getItem(`request/${id}`) || JSON.stringify(null))
+  const request:IListRequest|null = id ? JSON.parse(sessionStorage.getItem(`request/${id}`) || JSON.stringify(null)) : null
   return (
     <Container>
       <TopBar>
