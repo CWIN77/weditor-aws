@@ -97,8 +97,8 @@ function Detail() {
             <Svg_play stroke="#C8D4E6" {...navIconStyle} />
             <h2>플레이</h2>
           </NavIcon>
-          <NavIcon>
-            <Svg_download href={String(request?.downloadUrl)} fill="#C8D4E6" {...navIconStyle} />
+          <NavIcon href={String(request?.downloadUrl)}>
+            <Svg_download fill="#C8D4E6" {...navIconStyle} />
             <h2>다운받기</h2>
           </NavIcon>
           <NavIcon>
