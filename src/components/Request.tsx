@@ -61,15 +61,14 @@ function Request({request}:{request:IListRequest}) {
           <span style={{width:3,height:3,backgroundColor:'rgba(218, 228, 242, 0.7)',margin:6,borderRadius:"100px"}} />
           <StatusText>3시간전</StatusText>
         </div>{/* Adm1sK9W */}
-        <Link href={{
-            pathname: '/request/[id]',
-            query: { request: JSON.stringify(request) }, // array라 문자화
-          }}
-          as={`/request/${request.id}`}
-        >
-          <div>
-            <Title>{request.title}</Title>
-            <ExplaneText>{request.explane}</ExplaneText>
+        <Link href={`/request/${request.id}`}>
+          <div onClick={()=>{sessionStorage.setItem(`request/${request.id}`,JSON.stringify(request))}}>
+            <Title>{request.title}</Title>            
+            {
+              request.explane.split('^').map((text,key)=>
+                key < 2 && <ExplaneText key={key}>{text}</ExplaneText>
+              )
+            }
           </div>
         </Link>
         <div style={{display:'flex',alignItems:'center',marginTop:8,marginBottom:2,justifyContent:"space-between",width:'100%'}}>

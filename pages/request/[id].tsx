@@ -13,17 +13,15 @@ import Svg_download from '../../src/svgs/download.svg';
 import Svg_upload from '../../src/svgs/upload.svg';
 import Svg_box from '../../src/svgs/box.svg';
 
-function Detail(props:any) {
+import {IListRequest} from '../../src/types'
+
+function Detail() {
   const topIconStyle = {fill:"#C8D4E6",width:20,height:20,style:{padding:"0.5rem",cursor:'pointer'}}
   const mainIconStyle = {fill:"#C8D4E6",width:18,height:18}
   const navIconStyle = {width:20,height:20}
   const router = useRouter();
   const {id} = router.query;
-  // const request = JSON.parse(query.request);
-  useEffect(()=>{
-    console.log(id)
-    console.log(props)
-  },[])
+  const request:IListRequest|null = JSON.parse(sessionStorage.getItem(`request/${id}`) || JSON.stringify(null))
   return (
     <Container>
       <TopBar>
@@ -40,11 +38,25 @@ function Detail(props:any) {
             <div style={{justifyContent: "space-between"}}>
               <div>
                 <Svg_tag {...mainIconStyle} />
-                <h2>게임 / 자막</h2>
+                {
+                  request?.setting.tag.map((tag,key)=>
+                    <h2 key={key}>{tag}</h2>
+                  )
+                }
               </div>
               <div>
                 <Svg_subtitle {...mainIconStyle} />
-                <h2>자막 필수</h2> {/* 자막 불필요 */}
+                <h2>
+                  {
+                    request?.setting.subtitle === 0
+                    ? "자막 불필요"
+                    : request?.setting.subtitle === 1
+                    ? "자막 필수"
+                    : request?.setting.subtitle === 1
+                    ? "자막 무상관"
+                    : null
+                  }
+                </h2>
               </div>
             </div>
             <div style={{justifyContent:'center'}}>
@@ -55,15 +67,15 @@ function Detail(props:any) {
             <div style={{justifyContent: "space-between"}}>
               <div>
                 <Svg_clock {...mainIconStyle} />
-                <h2>8분 이내</h2>
+                <h2>{request?.setting.length}</h2>
               </div>
               <div>
                 <Svg_ratio {...mainIconStyle} />
-                <h2>16 : 9 비율</h2>
+                <h2>{request?.setting.ratio} 비율</h2>
               </div>
             </div>
           </Guide>
-          <Title>간단한 컷편집 해주세요 간단한 컷 편집을 부탁드립니다해주세요!</Title>
+          <Title>{request?.title}</Title>
           <Information>
             <img src='https://static-cdn.jtvnw.net/jtv_user_pictures/f37d5675-c11a-4564-9d8a-c8b2fca47f2d-profile_image-70x70.png'></img>
             <h2>CWIN77</h2>
@@ -71,23 +83,22 @@ function Detail(props:any) {
             <h2>2022년 6월 2일</h2>
           </Information>
           <Explane>
-            <h2>영상에 맞게 재미있는 자막과 컷편집을 해주세요</h2>
-            <h2>그리고밑에 적는 하이라이트 부분은</h2>
-            <h2>꼭 넣어주세요 2:35 하이라이트영상에 맞게 재미있는 자막과 컷편집을 해주세요</h2>
-            <h2>그리고 밑에 적는 하이라이트 부분은</h2>
-            <h2>영상에 맞게 재미있는 자막과 컷편집을 해주세요</h2>
-            {/* 작성시 엔터마다 ^를 넣고 후에 폰트를 ^에 따라 배열로 변환하여 */}
+            {
+              request?.explane.split('^').map((text,key)=>
+                <h2 key={key}>{text}</h2>
+              )
+            }
           </Explane>
         </Main>
       </div>
       <Nav>
         <NavIconWrapper>
-          <NavIcon>
+          <NavIcon href={String(request?.videoUrl)} type="_blank">
             <Svg_play stroke="#C8D4E6" {...navIconStyle} />
             <h2>플레이</h2>
           </NavIcon>
           <NavIcon>
-            <Svg_download fill="#C8D4E6" {...navIconStyle} />
+            <Svg_download href={String(request?.downloadUrl)} fill="#C8D4E6" {...navIconStyle} />
             <h2>다운받기</h2>
           </NavIcon>
           <NavIcon>
@@ -130,7 +141,7 @@ const NavIconWrapper = styled.div`
   border-radius:8px;
   padding:6px;
 `
-const NavIcon = styled.span`
+const NavIcon = styled.a`
   display:flex;
   cursor: pointer;
   flex-direction: column;
@@ -151,7 +162,6 @@ const Explane = styled.div`
     margin-top: 1.5px;
     letter-spacing: 0.75px;
   }
-  width:95%;
 `
 const Title = styled.h1`
   font-size: 20px;
