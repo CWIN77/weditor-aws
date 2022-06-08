@@ -19,7 +19,7 @@ function Navbar() {
   const [isOver,setIsOver] = useState(false)
   const iconStyle = {width:16,height:16,fill:"#C8D4E6",style:{marginRight:6}}
   useEffect(()=>{
-    window.addEventListener('scroll',()=>{setIsOver(window.scrollY > 68)})
+    window.addEventListener('scroll',()=>{setIsOver(window.scrollY > 89.75)})
   },[])
   return (
     <div style={{width:'100%'}}>

@@ -6,11 +6,6 @@ function Save() {
   return (
     <Container>
       <Navbar/>
-      <Request/>
-      <Request/>
-      <Request/>
-      <Request/>
-      <Request/>
     </Container>
   )
 }

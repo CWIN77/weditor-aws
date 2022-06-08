@@ -3,12 +3,11 @@
 input AMPLIFY {
   globalAuthRule: AuthRule = { allow: public }
 } # FOR TESTING ONLY!
-type Requset @model {
+type Request @model {
   id: ID!
   title: String!
-  explane: [String]!
+  explane: String!
   pay: Int!
-  time: Int!
   videoUrl: String!
   downloadUrl: String!
   setting: Setting!
@@ -22,6 +21,5 @@ type Setting {
   subtitle: Int!
 }
 type User {
-  name: String!
   id: ID!
 }

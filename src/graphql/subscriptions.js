@@ -1,14 +1,13 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateRequset = /* GraphQL */ `
-  subscription OnCreateRequset {
-    onCreateRequset {
+export const onCreateRequest = /* GraphQL */ `
+  subscription OnCreateRequest {
+    onCreateRequest {
       id
       title
       explane
       pay
-      time
       videoUrl
       downloadUrl
       setting {
@@ -18,11 +17,9 @@ export const onCreateRequset = /* GraphQL */ `
         subtitle
       }
       owner {
-        name
         id
       }
       keepUser {
-        name
         id
       }
       createdAt
@@ -30,14 +27,13 @@ export const onCreateRequset = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateRequset = /* GraphQL */ `
-  subscription OnUpdateRequset {
-    onUpdateRequset {
+export const onUpdateRequest = /* GraphQL */ `
+  subscription OnUpdateRequest {
+    onUpdateRequest {
       id
       title
       explane
       pay
-      time
       videoUrl
       downloadUrl
       setting {
@@ -47,11 +43,9 @@ export const onUpdateRequset = /* GraphQL */ `
         subtitle
       }
       owner {
-        name
         id
       }
       keepUser {
-        name
         id
       }
       createdAt
@@ -59,14 +53,13 @@ export const onUpdateRequset = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteRequset = /* GraphQL */ `
-  subscription OnDeleteRequset {
-    onDeleteRequset {
+export const onDeleteRequest = /* GraphQL */ `
+  subscription OnDeleteRequest {
+    onDeleteRequest {
       id
       title
       explane
       pay
-      time
       videoUrl
       downloadUrl
       setting {
@@ -76,11 +69,9 @@ export const onDeleteRequset = /* GraphQL */ `
         subtitle
       }
       owner {
-        name
         id
       }
       keepUser {
-        name
         id
       }
       createdAt

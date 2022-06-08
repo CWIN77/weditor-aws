@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import {useRouter} from 'next/router';
+import {useRouter,withRouter} from 'next/router';
 import styled from 'styled-components'
 import Svg_arrow from '../../src/svgs/arrow.svg';
 import Svg_menu from '../../src/svgs/menu.svg';
@@ -13,14 +13,16 @@ import Svg_download from '../../src/svgs/download.svg';
 import Svg_upload from '../../src/svgs/upload.svg';
 import Svg_box from '../../src/svgs/box.svg';
 
-function Detail() {
+function Detail(props:any) {
   const topIconStyle = {fill:"#C8D4E6",width:20,height:20,style:{padding:"0.5rem",cursor:'pointer'}}
   const mainIconStyle = {fill:"#C8D4E6",width:18,height:18}
   const navIconStyle = {width:20,height:20}
   const router = useRouter();
   const {id} = router.query;
+  // const request = JSON.parse(query.request);
   useEffect(()=>{
     console.log(id)
+    console.log(props)
   },[])
   return (
     <Container>
@@ -154,6 +156,7 @@ const Explane = styled.div`
 const Title = styled.h1`
   font-size: 20px;
   word-wrap: break-word;
+  margin:0px;
 `
 const Information = styled.div`
   display:flex;
@@ -215,4 +218,4 @@ const TopBar = styled.div`
   margin: 1rem;
 `
 
-export default Detail
+export default withRouter(Detail)

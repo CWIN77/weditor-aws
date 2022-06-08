@@ -15,7 +15,7 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
-          "name" : "getRequset",
+          "name" : "getRequest",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -33,20 +33,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Requset",
+            "name" : "Request",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listRequsets",
+          "name" : "listRequests",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetFilterInput",
+              "name" : "ModelRequestFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -71,7 +71,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelRequsetConnection",
+            "name" : "ModelRequestConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -83,7 +83,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "Requset",
+        "name" : "Request",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -123,34 +123,15 @@
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "String",
-                "ofType" : null
-              }
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "pay",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
               "kind" : "SCALAR",
-              "name" : "Int",
+              "name" : "String",
               "ofType" : null
             }
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "time",
+          "name" : "pay",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -383,21 +364,6 @@
         "name" : "User",
         "description" : null,
         "fields" : [ {
-          "name" : "name",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
           "name" : "id",
           "description" : null,
           "args" : [ ],
@@ -428,7 +394,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "ModelRequsetConnection",
+        "name" : "ModelRequestConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -442,7 +408,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "OBJECT",
-                "name" : "Requset",
+                "name" : "Request",
                 "ofType" : null
               }
             }
@@ -467,7 +433,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelRequsetFilterInput",
+        "name" : "ModelRequestFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -507,15 +473,6 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "time",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelIntInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
           "name" : "videoUrl",
           "description" : null,
           "type" : {
@@ -541,7 +498,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetFilterInput",
+              "name" : "ModelRequestFilterInput",
               "ofType" : null
             }
           },
@@ -554,7 +511,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetFilterInput",
+              "name" : "ModelRequestFilterInput",
               "ofType" : null
             }
           },
@@ -564,7 +521,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelRequsetFilterInput",
+            "name" : "ModelRequestFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1075,7 +1032,7 @@
         "name" : "Mutation",
         "description" : null,
         "fields" : [ {
-          "name" : "createRequset",
+          "name" : "createRequest",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1085,7 +1042,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateRequsetInput",
+                "name" : "CreateRequestInput",
                 "ofType" : null
               }
             },
@@ -1095,20 +1052,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetConditionInput",
+              "name" : "ModelRequestConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Requset",
+            "name" : "Request",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateRequset",
+          "name" : "updateRequest",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1118,7 +1075,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateRequsetInput",
+                "name" : "UpdateRequestInput",
                 "ofType" : null
               }
             },
@@ -1128,20 +1085,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetConditionInput",
+              "name" : "ModelRequestConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Requset",
+            "name" : "Request",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteRequset",
+          "name" : "deleteRequest",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -1151,7 +1108,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteRequsetInput",
+                "name" : "DeleteRequestInput",
                 "ofType" : null
               }
             },
@@ -1161,14 +1118,14 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetConditionInput",
+              "name" : "ModelRequestConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Requset",
+            "name" : "Request",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -1180,7 +1137,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateRequsetInput",
+        "name" : "CreateRequestInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1212,31 +1169,14 @@
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
-              "kind" : "LIST",
-              "name" : null,
-              "ofType" : {
-                "kind" : "SCALAR",
-                "name" : "String",
-                "ofType" : null
-              }
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "pay",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
               "kind" : "SCALAR",
-              "name" : "Int",
+              "name" : "String",
               "ofType" : null
             }
           },
           "defaultValue" : null
         }, {
-          "name" : "time",
+          "name" : "pay",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -1392,19 +1332,6 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "name",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
           "name" : "id",
           "description" : null,
           "type" : {
@@ -1419,7 +1346,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelRequsetConditionInput",
+        "name" : "ModelRequestConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1442,15 +1369,6 @@
           "defaultValue" : null
         }, {
           "name" : "pay",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelIntInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "time",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1484,7 +1402,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetConditionInput",
+              "name" : "ModelRequestConditionInput",
               "ofType" : null
             }
           },
@@ -1497,7 +1415,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelRequsetConditionInput",
+              "name" : "ModelRequestConditionInput",
               "ofType" : null
             }
           },
@@ -1507,7 +1425,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelRequsetConditionInput",
+            "name" : "ModelRequestConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1517,7 +1435,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateRequsetInput",
+        "name" : "UpdateRequestInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1546,26 +1464,13 @@
           "name" : "explane",
           "description" : null,
           "type" : {
-            "kind" : "LIST",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "pay",
-          "description" : null,
-          "type" : {
             "kind" : "SCALAR",
-            "name" : "Int",
+            "name" : "String",
             "ofType" : null
           },
           "defaultValue" : null
         }, {
-          "name" : "time",
+          "name" : "pay",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -1628,7 +1533,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteRequsetInput",
+        "name" : "DeleteRequestInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1653,34 +1558,34 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
-          "name" : "onCreateRequset",
+          "name" : "onCreateRequest",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Requset",
+            "name" : "Request",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onUpdateRequset",
+          "name" : "onUpdateRequest",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Requset",
+            "name" : "Request",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "onDeleteRequset",
+          "name" : "onDeleteRequest",
           "description" : null,
           "args" : [ ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "Requset",
+            "name" : "Request",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -2670,6 +2575,23 @@
         "onFragment" : false,
         "onField" : false
       }, {
+        "name" : "deprecated",
+        "description" : null,
+        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
+        "args" : [ {
+          "name" : "reason",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : "\"No longer supported\""
+        } ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
         "name" : "aws_cognito_user_pools",
         "description" : "Tells the service this field/object has access authorized by a Cognito User Pools token.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
@@ -2707,23 +2629,6 @@
             }
           },
           "defaultValue" : null
-        } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "deprecated",
-        "description" : null,
-        "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
-        "args" : [ {
-          "name" : "reason",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : "\"No longer supported\""
         } ],
         "onOperation" : false,
         "onFragment" : false,

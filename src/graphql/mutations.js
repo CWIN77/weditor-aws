@@ -1,17 +1,16 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createRequset = /* GraphQL */ `
-  mutation CreateRequset(
-    $input: CreateRequsetInput!
-    $condition: ModelRequsetConditionInput
+export const createRequest = /* GraphQL */ `
+  mutation CreateRequest(
+    $input: CreateRequestInput!
+    $condition: ModelRequestConditionInput
   ) {
-    createRequset(input: $input, condition: $condition) {
+    createRequest(input: $input, condition: $condition) {
       id
       title
       explane
       pay
-      time
       videoUrl
       downloadUrl
       setting {
@@ -21,11 +20,9 @@ export const createRequset = /* GraphQL */ `
         subtitle
       }
       owner {
-        name
         id
       }
       keepUser {
-        name
         id
       }
       createdAt
@@ -33,17 +30,16 @@ export const createRequset = /* GraphQL */ `
     }
   }
 `;
-export const updateRequset = /* GraphQL */ `
-  mutation UpdateRequset(
-    $input: UpdateRequsetInput!
-    $condition: ModelRequsetConditionInput
+export const updateRequest = /* GraphQL */ `
+  mutation UpdateRequest(
+    $input: UpdateRequestInput!
+    $condition: ModelRequestConditionInput
   ) {
-    updateRequset(input: $input, condition: $condition) {
+    updateRequest(input: $input, condition: $condition) {
       id
       title
       explane
       pay
-      time
       videoUrl
       downloadUrl
       setting {
@@ -53,11 +49,9 @@ export const updateRequset = /* GraphQL */ `
         subtitle
       }
       owner {
-        name
         id
       }
       keepUser {
-        name
         id
       }
       createdAt
@@ -65,17 +59,16 @@ export const updateRequset = /* GraphQL */ `
     }
   }
 `;
-export const deleteRequset = /* GraphQL */ `
-  mutation DeleteRequset(
-    $input: DeleteRequsetInput!
-    $condition: ModelRequsetConditionInput
+export const deleteRequest = /* GraphQL */ `
+  mutation DeleteRequest(
+    $input: DeleteRequestInput!
+    $condition: ModelRequestConditionInput
   ) {
-    deleteRequset(input: $input, condition: $condition) {
+    deleteRequest(input: $input, condition: $condition) {
       id
       title
       explane
       pay
-      time
       videoUrl
       downloadUrl
       setting {
@@ -85,11 +78,9 @@ export const deleteRequset = /* GraphQL */ `
         subtitle
       }
       owner {
-        name
         id
       }
       keepUser {
-        name
         id
       }
       createdAt

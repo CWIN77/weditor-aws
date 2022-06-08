@@ -7,8 +7,9 @@ import Svg_ratio from '../svgs/ratio.svg';
 import Svg_subtitle from '../svgs/subtitle.svg';
 import Svg_clock from '../svgs/clock.svg';
 import Svg_menu from '../svgs/menu.svg';
+import {IListRequest} from '../types'
 
-function Request() {
+function Request({request}:{request:IListRequest}) {
   const iconStyle = {fill:"#C8D4E6",width:18,height:18}
   return (
     <Container>
@@ -16,11 +17,25 @@ function Request() {
         <div style={{justifyContent: "space-between"}}>
           <div>
             <Svg_tag {...iconStyle} />
-            <h2>게임 / 자막</h2>
+            {
+              request.setting.tag.map((tag,key)=>
+                <h2 key={key}>{tag}</h2>
+              )
+            }
           </div>
           <div>
             <Svg_subtitle {...iconStyle} />
-            <h2>자막 필수</h2> {/* 자막 불필요 */}
+            <h2>
+              {
+                request.setting.subtitle === 0
+                ? "자막 불필요"
+                : request.setting.subtitle === 1
+                ? "자막 필수"
+                : request.setting.subtitle === 1
+                ? "자막 무상관"
+                : null
+              }
+            </h2>
           </div>
         </div>
         <div style={{justifyContent:'center'}}>
@@ -31,11 +46,11 @@ function Request() {
         <div style={{justifyContent: "space-between"}}>
           <div>
             <Svg_clock {...iconStyle} />
-            <h2>8분 이내</h2>
+            <h2>{request.setting.length}</h2>
           </div>
           <div>
             <Svg_ratio {...iconStyle} />
-            <h2>16 : 9 비율</h2>
+            <h2>{request.setting.ratio} 비율</h2>
           </div>
         </div>
       </Guide>
@@ -45,19 +60,24 @@ function Request() {
           <StatusText>CWIN77</StatusText>
           <span style={{width:3,height:3,backgroundColor:'rgba(218, 228, 242, 0.7)',margin:6,borderRadius:"100px"}} />
           <StatusText>3시간전</StatusText>
-        </div>
-        <Link href="/request/Adm1sK9W">
+        </div>{/* Adm1sK9W */}
+        <Link href={{
+            pathname: '/request/[id]',
+            query: { request: JSON.stringify(request) }, // array라 문자화
+          }}
+          as={`/request/${request.id}`}
+        >
           <div>
-            <Title>간단하게 컷편집 해주세요!</Title>
-            <ExplaneText>게임 플레이 영상중에서 괜찮은 장면만 적당히 골라서 컷편집으로 만들어서 올려주세요.</ExplaneText>
+            <Title>{request.title}</Title>
+            <ExplaneText>{request.explane}</ExplaneText>
           </div>
         </Link>
         <div style={{display:'flex',alignItems:'center',marginTop:8,marginBottom:2,justifyContent:"space-between",width:'100%'}}>
           <div style={{display:'flex',alignItems:'center',margin:2,marginTop:6}}>
             <Svg_money width={20} height={20} fill="#C8D4E6" />
-            <Payment>60,000원~</Payment>
+            <Payment><>{request.pay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원~</></Payment>
           </div>
-          <Svg_menu width={20} height={20} fill="#C8D4E6" style={{padding:6}} / >
+          <Svg_menu width={20} height={20} fill="#C8D4E6" style={{padding:4}} / >
         </div>
       </div>
     </Container>
@@ -125,7 +145,7 @@ const UserImg = styled.img`
 const Title = styled.h1`
   font-size: 18px;
   width:92%;
-  margin-top:2px;
+  margin-top:6px;
   margin-bottom: 4px;
 `
 const StatusText = styled.h4`
