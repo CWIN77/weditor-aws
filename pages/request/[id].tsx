@@ -27,7 +27,7 @@ function Detail() {
       <TopBar>
         <Svg_arrow onClick={()=>{window.history.back()}} {...topIconStyle} />
         <div style={{display:'flex',alignItems:'center'}}>
-          <Svg_money width={20} height={20} />
+          <Svg_money fill="#C8D4E6" width={20} height={20} />
           <h1 style={{fontSize:17,marginLeft:6}}><>최소 {request?.pay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원 지급</></h1>
         </div>
         <Svg_menu {...topIconStyle} />
