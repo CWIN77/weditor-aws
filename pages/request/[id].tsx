@@ -27,8 +27,8 @@ function Detail() {
       <TopBar>
         <Svg_arrow onClick={()=>{window.history.back()}} {...topIconStyle} />
         <div style={{display:'flex',alignItems:'center'}}>
-          <Svg_money width={20} height={20} />
-          <h1 style={{fontSize:17,marginLeft:6}}>최소 60,000원 지급</h1>
+          <Svg_money fill="#C8D4E6" width={20} height={20} />
+          <h1 style={{fontSize:17,marginLeft:6}}><>최소 {request?.pay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원 지급</></h1>
         </div>
         <Svg_menu {...topIconStyle} />
       </TopBar>
@@ -97,8 +97,8 @@ function Detail() {
             <Svg_play stroke="#C8D4E6" {...navIconStyle} />
             <h2>플레이</h2>
           </NavIcon>
-          <NavIcon>
-            <Svg_download href={String(request?.downloadUrl)} fill="#C8D4E6" {...navIconStyle} />
+          <NavIcon href={String(request?.downloadUrl)}>
+            <Svg_download fill="#C8D4E6" {...navIconStyle} />
             <h2>다운받기</h2>
           </NavIcon>
           <NavIcon>
