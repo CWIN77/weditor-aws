@@ -60,7 +60,7 @@ function Request({request}:{request:IListRequest}) {
           <StatusText>CWIN77</StatusText>
           <span style={{width:3,height:3,backgroundColor:'rgba(218, 228, 242, 0.7)',margin:6,borderRadius:"100px"}} />
           <StatusText>3시간전</StatusText>
-        </div>{/* Adm1sK9W */}
+        </div>
         <Link href={`/request/${request.id}`}>
           <div onClick={()=>{sessionStorage.setItem(`request/${request.id}`,JSON.stringify(request))}}>
             <Title>{request.title}</Title>            

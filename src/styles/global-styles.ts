@@ -11,8 +11,8 @@ export const GlobalStyle = createGlobalStyle`
   a { cursor: pointer; text-decoration: none; }
   body{
     margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
     background-color: #1d2127;
   }
   body::-webkit-scrollbar{
@@ -31,9 +31,9 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
     text-decoration: none;
-    font-size: 16px;
+    /* font-size: 16px; */
     color: black;
-    font-weight: 400;
+    /* font-weight: 400; */
     color: #C8D4E6;
   }
 `;
